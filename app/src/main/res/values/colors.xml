@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#303b9f</color>
     <color name="colorAccent">#53ff40</color>
     <color name="colorTextBkg">#7f59ebf9</color>
+    <color name="colorUsrBkg">#6436faa5</color>
     <color name="colorButtonBkg">#8f96fd67</color>
     <color name="colorText">#ffffff</color>
 </resources>

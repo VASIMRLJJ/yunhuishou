@@ -3,6 +3,8 @@ package com.yunhuishou.administrator.pack;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -384,7 +386,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
             if (success)
             {
-                finish();
+                //finish();
+                Intent mIntent = new Intent(LoginActivity.this ,AfterLogin.class);
+                startActivity(mIntent);
             } else
             {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
