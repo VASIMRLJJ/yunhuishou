@@ -21,6 +21,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -30,7 +31,9 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,7 +55,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * TODO: remove after connecting to a real authentication system.
      */
     private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "foo@example.com:hello", "bar@example.com:world"
+            "foo@example.com:hello", "bar@example.com:world", "@:12345"
     };
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
@@ -74,6 +77,19 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
+        mEmailView.setOnEditorActionListener(new TextView.OnEditorActionListener()
+        {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event)
+            {
+                if(actionId == EditorInfo.IME_ACTION_NEXT)
+                {
+                    mPasswordView.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
 
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener()
@@ -343,6 +359,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         private final String mEmail;
         private final String mPassword;
+        private boolean IS_INTERNET_ON = true;
 
         UserLoginTask(String email, String password)
         {
@@ -355,27 +372,46 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         {
             // TODO: attempt authentication against a network service.
 
-            try
+            /*try
             {
                 // Simulate network access.
                 Thread.sleep(2000);
             } catch (InterruptedException e)
             {
                 return false;
-            }
-
-            for (String credential : DUMMY_CREDENTIALS)
+            }*/
+            boolean result = false;
+            try
             {
-                String[] pieces = credential.split(":");
-                if (pieces[0].equals(mEmail))
-                {
-                    // Account exists, return true if the password matches.
-                    return pieces[1].equals(mPassword);
-                }
+                result = UserService.check(mEmail, mPassword);
             }
+            catch (SocketException e)
+            {
+                //Toast.makeText(LoginActivity.this, "无法连接到互联网", Toast.LENGTH_SHORT).show();
+                Log.e("TAG", "!!!");
+                IS_INTERNET_ON = false;
+            }
+            if(result)
+            {
+                Log.i("TAG", "SUCCESS");
+                return result;
+            }
+            else
+            {
+                for (String credential : DUMMY_CREDENTIALS)
+                {
+                    String[] pieces = credential.split(":");
+                    if (pieces[0].equals(mEmail))
+                    {
+                        Log.i("TAG", "EQUALS");
+                        // Account exists, return true if the password matches.
+                        return pieces[1].equals(mPassword);
+                    }
+                }
 
-            // TODO: register the new account here.
-            return true;
+                // TODO: register the new account here.
+                return false;
+            }
         }
 
         @Override
@@ -391,7 +427,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 startActivity(mIntent);
             } else
             {
-                mPasswordView.setError(getString(R.string.error_incorrect_password));
+                if(IS_INTERNET_ON)
+                    mPasswordView.setError(getString(R.string.error_incorrect_password));
+                else
+                    Toast.makeText(LoginActivity.this, "无法连接到服务器", Toast.LENGTH_SHORT).show();
                 mPasswordView.requestFocus();
             }
         }

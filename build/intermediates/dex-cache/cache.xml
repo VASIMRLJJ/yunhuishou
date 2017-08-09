@@ -7,8 +7,44 @@
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="f2d68eea93803a8d005ded60973016c103b1388e">
+        sha1="9cee4d5dbd18b3b3687dcf5f66d0d66ebe7ff8cc">
         <dex dex="C:\Users\Administrator\AndroidStudioProjects\yunhuishou\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_9ed4e7c3a5c5c4c88393622e2d087aa7c1a4d87f\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\2a01a4acab8febd05a0cbf3bc3ae6ec3526b9be9\output\jars\libs\zbar.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="e671e7a14299d6f2591fc1ae672c49861d3329c6">
+        <dex dex="C:\Users\Administrator\AndroidStudioProjects\yunhuishou\app\build\intermediates\pre-dexed\debug\zbar_6dff111806ba867c4d39c618d107101de1e926a5.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\AndroidStudioProjects\yunhuishou\app\lib\zbar.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="b7350ba6ec0fd2beac4e95d75410da582cec5baa">
+        <dex dex="C:\Users\Administrator\AndroidStudioProjects\yunhuishou\app\build\intermediates\transforms\dex\debug\folders\1000\2\zbar_3508d2db5105e16a060e9629a28a2ec6ac2cf6eb\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\f5f592e67940db0f51a101cc1c98a5e84bf91be6\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="f577701fa1e05f14bde07bfbd522ced08fe1f7a0">
+        <dex dex="C:\Users\Administrator\AndroidStudioProjects\yunhuishou\app\build\intermediates\pre-dexed\debug\classes_61583176907e30a9da23b39d1f8cc12b9396fab5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.android\build-cache\2a01a4acab8febd05a0cbf3bc3ae6ec3526b9be9\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="24c1101d64db3de0998b9080f6b2107de0a1f894">
+        <dex dex="C:\Users\Administrator\AndroidStudioProjects\yunhuishou\app\build\intermediates\pre-dexed\debug\classes_98602dfd68c38ab9c9177a4038e8c4f57ba451c9.jar" />
     </item>
     <item
         is-multidex="true"
@@ -18,6 +54,15 @@
         revision="26.0.1"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
         <dex dex="C:\Users\Administrator\AndroidStudioProjects\yunhuishou\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_248e82fe2596868941b33fcd1898fec1e0296712\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\AndroidStudioProjects\yunhuishou\app\lib\zbar.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="b7350ba6ec0fd2beac4e95d75410da582cec5baa">
+        <dex dex="C:\Users\Administrator\AndroidStudioProjects\yunhuishou\app\build\intermediates\pre-dexed\debug\zbar_3508d2db5105e16a060e9629a28a2ec6ac2cf6eb.jar" />
     </item>
 
 </items>

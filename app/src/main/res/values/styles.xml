@@ -9,7 +9,7 @@
     </style>
 
     <style name="hintTextAppearance" parent="TextAppearance.AppCompat">
-        <item name="android:textSize">25dp</item>
+        <item name="android:textSize">20dp</item>
         <item name="android:textColor">@color/colorText</item>
     </style>
 
