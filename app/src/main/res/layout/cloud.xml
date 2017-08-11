@@ -9,14 +9,14 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingTop="0dp"
     tools:context="com.yunhuishou.administrator.pack.LoginActivity">
 
     <!-- Login progress -->
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="185dp"
+        android:layout_height="150dp"
         app:srcCompat="@mipmap/mine_fill" />
 
     <TextView

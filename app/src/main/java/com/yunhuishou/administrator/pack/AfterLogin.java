@@ -64,6 +64,7 @@ public class AfterLogin extends Activity implements QRCodeView.Delegate
     {
         super.onStart();
         mQRCodeView.startCamera();
+        mQRCodeView.startSpot();
 
         mQRCodeView.showScanRect();
     }
@@ -72,6 +73,7 @@ public class AfterLogin extends Activity implements QRCodeView.Delegate
     protected void onStop()
     {
         mQRCodeView.stopCamera();
+        mQRCodeView.stopSpot();
         super.onStop();
     }
 

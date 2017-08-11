@@ -6,7 +6,7 @@
     android:id="@+id/zbarview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:qrcv_toolbarHeight="100dp"
+    app:qrcv_toolbarHeight="60dp"
     app:qrcv_animTime="1000"
     app:qrcv_borderColor="@android:color/white"
     app:qrcv_borderSize="1dp"
@@ -55,7 +55,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginTop="300dp"
+            android:layout_marginTop="260dp"
             android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
